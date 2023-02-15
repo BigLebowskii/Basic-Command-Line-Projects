@@ -1,5 +1,3 @@
-
-
 from replit import clear
 from art import logo
 import random
@@ -44,7 +42,6 @@ while restart:
     return sum(score)
 
     
-
   user_hand = []
   comp_hand = []
   user_hand.append(deal_card())
@@ -55,19 +52,19 @@ while restart:
   user_score = calculator_score(user_hand)
   comp_score = calculator_score(comp_hand)
   
-  start = input("Do you want to play a game of blackjack? ").lower()
+  start = input("Do you want to play a game of blackjack? Type 'Yes' or 'No'. ").lower()
   clear()
   if start == 'yes':
     print(logo)
     print(f"Your Cards: {user_hand}, and current score: {user_score}")
     print(f"Computer's cards: [{comp_hand[0]},_]")
     if calculator_score(user_hand) == 0:
-      print("YOu won")
+      print("You won with blackjack!😎")
     elif calculator_score(comp_hand) == 0:
-      print("You lost")
+      print("You lost to a blackjack!😭")
     else:
       while user_score <= 21:
-        option = input("Do you want to 'Hit' or 'Stand?'").lower()
+        option = input("Do you want to 'Hit' or 'Stand?: '").lower()
         clear()
         if option == 'hit':
           user_hand.append(deal_card())
